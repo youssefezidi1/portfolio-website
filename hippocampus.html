@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en" style="--plane: var(--sagittal); --accent: var(--sagittal)">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-en="Hippocampus segmentation & Alzheimer's risk — Youssef Ezidi" data-fr="Segmentation de l'hippocampe et risque d'Alzheimer — Youssef Ezidi">Hippocampus segmentation & Alzheimer's risk — Youssef Ezidi</title>
+<meta name="description" content="Modified U-Net segmentation of the hippocampus on 2D MRI, feeding a sex-specific atrophy threshold.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="case-hippocampus">
+<a class="skip" href="#main"><span lang="en">Skip to content</span><span lang="fr">Aller au contenu</span></a>
+<header class="topbar">
+  <div class="wrap topbar__in">
+    <a class="brand" href="index.html">Youssef Ezidi <span>/ ML & deep learning</span></a>
+    <nav class="nav">
+      <a href="index.html"><span lang="en">Work</span><span lang="fr">Projets</span></a>
+      <a href="index.html#projects"><span lang="en">Projects</span><span lang="fr">Projets</span></a>
+      <a href="about.html"><span lang="en">About</span><span lang="fr">Parcours</span></a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="langswitch" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<section class="wrap hero">
+  <a class="back" href="index.html"><span lang="en">&larr; All projects</span><span lang="fr">&larr; Tous les projets</span></a>
+  <p class="eyebrow"><span lang="en">Hippocampus segmentation & Alzheimer's risk</span><span lang="fr">Segmentation de l'hippocampe et risque d'Alzheimer</span></p>
+  <h1><span lang="en">From an MRI slice to a risk indicator a clinician can question.</span><span lang="fr">D'une coupe IRM à un indicateur de risque qu'un clinicien peut interroger.</span></h1>
+  <p class="lede" style="margin-top:1.5rem"><span lang="en">Project: an automated pipeline trained on 426 2D brain MRI images to segment the hippocampus, measure its surface, and compare it against a sex-specific threshold to flag atrophy associated with elevated Alzheimer's risk.</span><span lang="fr">Projet : un pipeline automatisé entraîné sur 426 images IRM cérébrales 2D pour segmenter l'hippocampe, mesurer sa surface, et la comparer à un seuil spécifique au sexe afin de signaler une atrophie associée à un risque accru d'Alzheimer.</span></p>
+  <dl class="facts">
+<div><dt><span lang="en">Type</span><span lang="fr">Type</span></dt><dd><span lang="en">Academic project (MSc)</span><span lang="fr">Projet académique (Master)</span></dd></div>
+<div><dt><span lang="en">Institution</span><span lang="fr">Établissement</span></dt><dd><span lang="en">Universite Clermont Auvergne</span><span lang="fr">Université Clermont Auvergne</span></dd></div>
+<div><dt><span lang="en">Modality</span><span lang="fr">Modalité</span></dt><dd><span lang="en">Brain MRI, 2D</span><span lang="fr">IRM cérébrale, 2D</span></dd></div>
+<div><dt><span lang="en">Dataset</span><span lang="fr">Dataset</span></dt><dd><span lang="en">426 2D MRI images</span><span lang="fr">426 images IRM 2D</span></dd></div>
+<div><dt><span lang="en">Result</span><span lang="fr">Résultat</span></dt><dd><span lang="en">Dice 0.91</span><span lang="fr">Dice 0,91</span></dd></div>
+  </dl>
+</section>
+
+<section class="section" style="border-top:0;padding-top:0">
+  <div class="wrap">
+
+<section class="phase">
+  <p class="phase__n">01</p>
+  <h2><span lang="en">Segmentation</span><span lang="fr">Segmentation</span></h2>
+  
+<p><span lang="en">The work started with a literature review of state-of-the-art hippocampus segmentation, then moved to designing and training a modified 2D U-Net on 426 annotated 2D MRI images, evaluated against expert annotations.</span><span lang="fr">Le travail a commencé par une revue de littérature sur les méthodes de segmentation de l'hippocampe à l'état de l'art, avant la conception et l'entraînement d'un U-Net 2D modifié sur 426 images IRM 2D annotées, évalué contre des annotations expertes.</span></p>
+<p><span lang="en">Result: Dice 0.91.</span><span lang="fr">Résultat : Dice 0,91.</span></p>
+<p class="stack"><span lang="en">Tools:</span><span lang="fr">Outils :</span> Python · TensorFlow · U-Net</p>
+<figure class="hippo-first-figure">
+  <img src="images/hippocampus-01-segmentation.png" alt="Predicted hippocampus mask against the expert annotation." data-label="images/hippocampus-01-segmentation.png">
+  <figcaption><span lang="en">Predicted hippocampus mask against the expert annotation.</span><span lang="fr">Masque prédit de l'hippocampe comparé à l'annotation experte.</span></figcaption>
+</figure>
+</section>
+<section class="phase">
+  <p class="phase__n">02</p>
+  <h2><span lang="en">From a mask to a risk prediction</span><span lang="fr">Du masque à une prédiction de risque</span></h2>
+  
+<p><span lang="en">The output is a risk prediction based on the measured values. The user can see both the predicted risk and the measurements used to calculate it.</span><span lang="fr">La sortie est une prédiction de risque basée sur les valeurs mesurées. L'utilisateur peut voir à la fois le risque prédit et les mesures utilisées pour le calculer.</span></p>
+</section>
+<section class="phase">
+  <p class="phase__n">03</p>
+  <h2><span lang="en">Interface</span><span lang="fr">Interface</span></h2>
+  
+<p><span lang="en">I developed a desktop application with PyQt and integrated the trained model directly into it. The application provides the full workflow in one interface: load the MRI image, run the segmentation, visualize the results, view the measurements and display the predicted risk.</span><span lang="fr">J'ai développé une application desktop avec PyQt et intégré le modèle entraîné directement dedans. L'application fournit le workflow complet dans une seule interface : charger l'image IRM, lancer la segmentation, visualiser les résultats, consulter les mesures et afficher le risque prédit.</span></p>
+<p><span lang="en">The application was designed to make the model easy to use without requiring any code or command line.</span><span lang="fr">L'application a été conçue pour rendre le modèle facile à utiliser, sans nécessiter de code ni de ligne de commande.</span></p>
+<p class="stack"><span lang="en">Tools:</span><span lang="fr">Outils :</span> Python · PyQt</p>
+<figure class="hippo-video-figure">
+  <video src="images/GUI_hipo.mp4"
+         controls playsinline preload="metadata"
+         aria-label="PyQt desktop application running the hippocampus segmentation workflow."></video>
+  <figcaption><span lang="en">PyQt desktop application running the hippocampus segmentation workflow.</span><span lang="fr">Application desktop PyQt exécutant le workflow de segmentation de l'hippocampe.</span></figcaption>
+</figure>
+</section>
+    <p class="note"><span lang="en">Academic research prototype. No clinical validation, no regulatory clearance, and not a diagnostic tool. The threshold flags a statistical association, not a diagnosis.</span><span lang="fr">Prototype de recherche académique. Aucune validation clinique, aucun marquage réglementaire, et ce n'est pas un outil de diagnostic. Le seuil signale une association statistique, pas un diagnostic.</span></p>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="wrap">
+    <p class="eyebrow">Contact</p>
+    <h2><span lang="en">Tell me about your data and your goal.</span><span lang="fr">Parlez-moi de vos données et de votre objectif.</span></h2>
+    <p class="lede" style="margin-top:1.2rem"><span lang="en">Open to roles in medical imaging, computer vision and AI. I focus on building solutions that are both technically sound and clinically relevant.</span><span lang="fr">Ouvert aux postes en imagerie médicale, vision par ordinateur et IA. Je me concentre sur la construction de solutions à la fois techniquement solides et cliniquement pertinentes.</span></p>
+    <div class="contact">
+      <a href="mailto:youssef.ezidi96@gmail.com"><b>Email</b>youssef.ezidi96@gmail.com</a>
+      <a href="https://www.linkedin.com/in/youssef-ezidi-624b08156/" rel="noopener"><b>LinkedIn</b><span lang="en">Profile</span><span lang="fr">Profil</span></a>
+      <a href="files/cv-youssef-ezidi-en.pdf"><b>CV (EN)</b>PDF</a>
+      <a href="files/cv-youssef-ezidi-fr.pdf"><b>CV (FR)</b>PDF</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <span>Youssef Ezidi — France</span>
+  </div>
+</footer>
+<script src="assets/js/site.js"></script>
+</body>
+</html>
+
+

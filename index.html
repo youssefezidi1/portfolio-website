@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-en="Youssef Ezidi — ML/DL, medical imaging, computer vision" data-fr="Youssef Ezidi — ML/DL, imagerie médicale, vision par ordinateur">Youssef Ezidi — ML/DL, medical imaging, computer vision</title>
+<meta name="description" content="ML/DL engineer in France: CT and MRI segmentation, model validation, and clinical software deployment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip" href="#main"><span lang="en">Skip to content</span><span lang="fr">Aller au contenu</span></a>
+<header class="topbar">
+  <div class="wrap topbar__in">
+    <a class="brand" href="index.html">Youssef Ezidi <span>/ ML & deep learning</span></a>
+    <nav class="nav">
+      <a href="index.html"><span lang="en">Work</span><span lang="fr">Projets</span></a>
+      <a href="#projects"><span lang="en">Projects</span><span lang="fr">Projets</span></a>
+      <a href="about.html"><span lang="en">About</span><span lang="fr">Parcours</span></a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="langswitch" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<section class="wrap hero">
+  <p class="eyebrow"><span lang="en">ML/DL · Medical imaging · Computer vision</span><span lang="fr">ML/DL · Imagerie médicale · Vision par ordinateur</span></p>
+  <h1><span lang="en">Building machine learning systems from training to deployment.</span><span lang="fr">Construire des systèmes de machine learning, de l'entraînement au déploiement.</span></h1>
+  <p class="lede"><span lang="en">I am an ML/DL engineer in France with two master's degrees and hands-on experience in deep learning for medical imaging. I build organ, tumor and anatomical-substructure segmentation pipelines on CT and MRI, validate them with clinicians, and ship them inside usable software.</span><span lang="fr">Je suis ingénieur ML/DL en France, avec un double master et une expérience concrète du deep learning appliqué à l'imagerie médicale. Je construis des pipelines de segmentation d'organes, de tumeurs et de sous-structures anatomiques sur CT et IRM, les valide avec des cliniciens, puis les intègre dans des logiciels utilisables.</span></p>
+
+  <div class="pipeline">
+    <div><b>01</b><span><span lang="en">Data preparation</span><span lang="fr">Préparation des données</span></span></div>
+    <div><b>02</b><span><span lang="en">Model training</span><span lang="fr">Entraînement</span></span></div>
+    <div><b>03</b><span><span lang="en">Validation</span><span lang="fr">Validation</span></span></div>
+    <div><b>04</b><span><span lang="en">Deployment</span><span lang="fr">Déploiement</span></span></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <table class="metrics">
+      <caption><span lang="en">Validation results — Dice score</span><span lang="fr">Résultats de validation — Dice score</span></caption>
+      <thead><tr>
+        <th><span lang="en">Project</span><span lang="fr">Projet</span></th>
+        <th><span lang="en">Structure</span><span lang="fr">Structure</span></th>
+        <th><span lang="en">Modality</span><span lang="fr">Modalité</span></th>
+        <th><span lang="en">Cases</span><span lang="fr">Volumes</span></th>
+        <th>Dice</th>
+      </tr></thead>
+      <tbody>
+<tr class="metric-group"><th colspan="5"><span lang="en">Liver digital twin</span><span lang="fr">Jumeau numérique hépatique</span></th></tr>
+<tr><td class="metric-project" rowspan="4"><span lang="en">Liver</span><span lang="fr">Foie</span></td><td><span lang="en">Parenchyma</span><span lang="fr">Parenchyme</span></td><td class="mono">CT</td><td class="mono">1,403</td><td class="dice">0.96<span class="bar"><i style="width:96%"></i></span></td></tr>
+<tr><td><span lang="en">Segments</span><span lang="fr">Segments hépatiques</span></td><td class="mono">CT</td><td class="mono">197</td><td class="dice">0.89<span class="bar"><i style="width:89%"></i></span></td></tr>
+<tr><td><span lang="en">Lesions</span><span lang="fr">Lésions hépatiques</span></td><td class="mono">CT</td><td class="mono">303</td><td class="dice">0.88<span class="bar"><i style="width:88%"></i></span></td></tr>
+<tr><td><span lang="en">Vessels</span><span lang="fr">Vaisseaux hépatiques</span></td><td class="mono">CT</td><td class="mono">303</td><td class="dice">0.74<span class="bar"><i style="width:74%"></i></span></td></tr>
+<tr class="metric-group"><th colspan="5"><span lang="en">Kidney digital twin</span><span lang="fr">Jumeau numérique rénal</span></th></tr>
+<tr><td class="metric-project" rowspan="5"><span lang="en">Kidney</span><span lang="fr">Rein</span></td><td><span lang="en">Parenchyma</span><span lang="fr">Parenchyme</span></td><td class="mono">CT</td><td class="mono">1,403</td><td class="dice">0.96<span class="bar"><i style="width:96%"></i></span></td></tr>
+<tr><td><span lang="en">Cortex</span><span lang="fr">Cortex rénal</span></td><td class="mono">CT</td><td class="mono">116</td><td class="dice">0.92<span class="bar"><i style="width:92%"></i></span></td></tr>
+<tr><td><span lang="en">Medulla</span><span lang="fr">Médulla rénale</span></td><td class="mono">CT</td><td class="mono">116</td><td class="dice">0.84<span class="bar"><i style="width:84%"></i></span></td></tr>
+<tr><td><span lang="en">Pelvicalyceal system</span><span lang="fr">Système pyélocaliciel</span></td><td class="mono">CT</td><td class="mono">116</td><td class="dice">0.78<span class="bar"><i style="width:78%"></i></span></td></tr>
+<tr><td><span lang="en">Lesions</span><span lang="fr">Lésions rénales</span></td><td class="mono">CT</td><td class="mono">210</td><td class="dice">0.84<span class="bar"><i style="width:84%"></i></span></td></tr>
+<tr class="metric-group"><th colspan="5"><span lang="en">Hippocampus segmentation</span><span lang="fr">Segmentation de l'hippocampe</span></th></tr>
+<tr><td class="metric-project"><span lang="en">Hippocampus</span><span lang="fr">Hippocampe</span></td><td><span lang="en">Hippocampus</span><span lang="fr">Hippocampe</span></td><td class="mono">MRI</td><td class="mono">426 2D</td><td class="dice">0.91<span class="bar"><i style="width:91%"></i></span></td></tr>
+      </tbody>
+    </table>
+    <p class="note"><span lang="en">Liver, kidney and lesion results are internal project results obtained in a proprietary medtech context. They are not published or peer-reviewed benchmarks. The hippocampus result comes from an academic MSc project. I am happy to walk through the methodology, the failure cases and the limits of each number.</span><span lang="fr">Les résultats foie, rein et lésions sont des résultats internes obtenus en contexte medtech propriétaire. Ils ne constituent ni un benchmark publié ni un travail revu par les pairs. Le résultat hippocampe provient d'un projet académique de master. Je peux détailler la méthodologie, les cas d'échec et les limites de chaque chiffre.</span></p>
+  </div>
+</section>
+
+<section class="section" id="projects">
+  <div class="wrap">
+    <p class="eyebrow"><span lang="en">Selected work</span><span lang="fr">Projets</span></p>
+    <h2><span lang="en">Projects</span><span lang="fr">Projets</span></h2>
+    <div class="cards">
+<a class="card" href="liver.html" style="--plane: var(--axial)"><span class="tag">CT · Segments · 3D Slicer</span><h3><span lang="en">Liver digital twin</span><span lang="fr">Jumeau numérique hépatique</span></h3><p><span lang="en">Parenchyma, vessels, lesions and liver segments from CT, then deployed inside a 3D Slicer application I built.</span><span lang="fr">Parenchyme, vaisseaux, lésions et segments hépatiques sur CT, puis déployés dans une application 3D Slicer que j'ai développée.</span></p><span class="go"><span lang="en">Read the case study &rarr;</span><span lang="fr">Lire l'étude de cas &rarr;</span></span></a>
+<a class="card" href="kidney.html" style="--plane: var(--coronal)"><span class="tag">CT · Registration · Segmentation</span><h3><span lang="en">Kidney digital twin</span><span lang="fr">Jumeau numérique rénal</span></h3><p><span lang="en">Multi-phase CT registration and segmentation of kidney, tumors, cortex, medulla and pelvicalyceal system.</span><span lang="fr">Recalage CT multi-phase et segmentation du rein, des tumeurs, du cortex, de la médulla et du système pyélocaliciel.</span></p><span class="go"><span lang="en">Read the case study &rarr;</span><span lang="fr">Lire l'étude de cas &rarr;</span></span></a>
+<a class="card" href="hippocampus.html" style="--plane: var(--sagittal)"><span class="tag">MRI · 426 images · PyQt</span><h3><span lang="en">Hippocampus & Alzheimer's risk</span><span lang="fr">Hippocampe et risque d'Alzheimer</span></h3><p><span lang="en">A modified U-Net segments the hippocampus on 426 2D MRI images; the measured surface feeds a sex-specific risk threshold.</span><span lang="fr">Un U-Net modifié segmente l'hippocampe sur 426 images IRM 2D ; la surface mesurée alimente un seuil de risque spécifique au sexe.</span></p><span class="go"><span lang="en">Read the case study &rarr;</span><span lang="fr">Lire l'étude de cas &rarr;</span></span></a>
+<a class="card" href="endoscopy.html" style="--plane: var(--optical)"><span class="tag">Endoscopy · OpenCV · PyQt</span><h3>EndoTracker</h3><p><span lang="en">Desktop application for annotating, tracking, validating and exporting 2D point correspondences in endoscopic image sequences.</span><span lang="fr">Application desktop pour annoter, suivre, valider et exporter des correspondances de points 2D dans des séquences d'images endoscopiques.</span></p><span class="go"><span lang="en">Read the case study &rarr;</span><span lang="fr">Lire l'étude de cas &rarr;</span></span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <p class="eyebrow"><span lang="en">How I work</span><span lang="fr">Ma façon de travailler</span></p>
+    <h2 style="max-width:22ch"><span lang="en">A high Dice score is not a result. A usable tool is.</span><span lang="fr">Un Dice élevé n'est pas un résultat. Un outil utilisable en est un.</span></h2>
+    <p class="lede" style="margin-top:1.5rem"><span lang="en">My background combines clinical engineering and machine learning. So I start with the decision the output supports, who reads it, and what happens when the model is wrong — then I choose the architecture.</span><span lang="fr">Mon parcours combine l'ingénierie clinique et le machine learning. Je commence donc par la décision que la sortie doit soutenir, par qui la lit, et par ce qui se passe quand le modèle se trompe — puis je choisis l'architecture.</span></p>
+    <p style="margin-top:1.5rem;color:var(--soft)"><span lang="en">That means reviewing segmentations case by case with clinicians rather than trusting an average, reporting the structures where a model underperforms as plainly as the ones where it shines, and finishing the job: a model nobody can run has not been delivered.</span><span lang="fr">Concrètement : relire les segmentations cas par cas avec les cliniciens plutôt que de se fier à une moyenne, rapporter aussi clairement les structures où le modèle échoue que celles où il excelle, et aller au bout : un modèle que personne ne peut lancer n'est pas livré.</span></p>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="wrap">
+    <p class="eyebrow">Contact</p>
+    <h2><span lang="en">Tell me about your data and your goal.</span><span lang="fr">Parlez-moi de vos données et de votre objectif.</span></h2>
+    <p class="lede" style="margin-top:1.2rem"><span lang="en">Open to roles in medical imaging, computer vision and AI. I focus on building solutions that are both technically sound and clinically relevant.</span><span lang="fr">Ouvert aux postes en imagerie médicale, vision par ordinateur et IA. Je me concentre sur la construction de solutions à la fois techniquement solides et cliniquement pertinentes.</span></p>
+    <div class="contact">
+      <a href="mailto:youssef.ezidi96@gmail.com"><b>Email</b>youssef.ezidi96@gmail.com</a>
+      <a href="https://www.linkedin.com/in/youssef-ezidi-624b08156/" rel="noopener"><b>LinkedIn</b><span lang="en">Profile</span><span lang="fr">Profil</span></a>
+      <a href="files/cv-youssef-ezidi-en.pdf"><b>CV (EN)</b>PDF</a>
+      <a href="files/cv-youssef-ezidi-fr.pdf"><b>CV (FR)</b>PDF</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <span>Youssef Ezidi — France</span>
+  </div>
+</footer>
+<script src="assets/js/site.js"></script>
+</body>
+</html>

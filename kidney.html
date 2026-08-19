@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en" style="--plane: var(--coronal); --accent: var(--coronal)">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-en="Kidney digital twin — Youssef Ezidi" data-fr="Jumeau numérique rénal — Youssef Ezidi">Kidney digital twin — Youssef Ezidi</title>
+<meta name="description" content="Multi-phase CT kidney digital twin project with rigid and non-rigid registration plus renal structure segmentation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="case-kidney">
+<a class="skip" href="#main"><span lang="en">Skip to content</span><span lang="fr">Aller au contenu</span></a>
+<header class="topbar">
+  <div class="wrap topbar__in">
+    <a class="brand" href="index.html">Youssef Ezidi <span>/ ML & deep learning</span></a>
+    <nav class="nav">
+      <a href="index.html"><span lang="en">Work</span><span lang="fr">Projets</span></a>
+      <a href="index.html#projects"><span lang="en">Projects</span><span lang="fr">Projets</span></a>
+      <a href="about.html"><span lang="en">About</span><span lang="fr">Parcours</span></a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="langswitch" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<section class="wrap hero">
+  <a class="back" href="index.html"><span lang="en">&larr; All projects</span><span lang="fr">&larr; Tous les projets</span></a>
+  <p class="eyebrow"><span lang="en">Kidney digital twin</span><span lang="fr">Jumeau numérique rénal</span></p>
+  <h1><span lang="en">Multi-phase CT, aligned and segmented for a patient-specific kidney digital twin.</span><span lang="fr">Du CT multi-phase, recalé et segmenté pour un jumeau numérique rénal patient-spécifique.</span></h1>
+  <p class="lede" style="margin-top:1.5rem"><span lang="en">Kidney digital twin project: kidney, tumor, cortex, medulla and pelvicalyceal-system segmentation across CT phases, with rigid and non-rigid registration to align the acquisitions before analysis.</span><span lang="fr">Projet de jumeau numérique rénal : segmentation du rein, des tumeurs, du cortex, de la médulla et du système pyélocaliciel sur plusieurs phases CT, avec recalage rigide et non rigide pour aligner les acquisitions avant l'analyse.</span></p>
+  <dl class="facts">
+<div><dt><span lang="en">Context</span><span lang="fr">Contexte</span></dt><dd><span lang="en">Medtech startup, France</span><span lang="fr">Startup medtech, France</span></dd></div>
+<div><dt><span lang="en">Period</span><span lang="fr">Période</span></dt><dd><span lang="en">Sept 2025 – May 2026</span><span lang="fr">Sept. 2025 – Mai 2026</span></dd></div>
+<div><dt><span lang="en">Targets</span><span lang="fr">Cibles</span></dt><dd><span lang="en">Kidney, tumors, cortex, medulla, pelvicalyceal system</span><span lang="fr">Rein, tumeurs, cortex, médulla, système pyélocaliciel</span></dd></div>
+<div><dt><span lang="en">Modality</span><span lang="fr">Modalité</span></dt><dd><span lang="en">Multi-phase CT</span><span lang="fr">CT multi-phase</span></dd></div>
+  </dl>
+</section>
+
+<section class="section" style="border-top:0;padding-top:0">
+  <div class="wrap">
+
+<section class="phase">
+  <p class="phase__n">01</p>
+  <h2><span lang="en">Requirements with clinicians</span><span lang="fr">Cadrage avec les cliniciens</span></h2>
+  
+<p><span lang="en">The project started with a multidisciplinary clinical team rather than with a dataset. We defined the requirements, the clinical criteria and what would count as success before any model was trained — which is what made the later validation meaningful.</span><span lang="fr">Le projet a démarré avec une équipe clinique pluridisciplinaire, pas avec un dataset. Nous avons défini les exigences, les critères cliniques et ce qui constituerait un succès avant d'entraîner le moindre modèle. C'est ce qui a donné du sens à la validation ensuite.</span></p>
+</section>
+<section class="phase">
+  <p class="phase__n">02</p>
+  <h2><span lang="en">Registration and data preparation</span><span lang="fr">Recalage et préparation des données</span></h2>
+  
+<p><span lang="en">Renal CT is acquired in several contrast phases. Comparing or combining these phases requires spatial alignment first, otherwise the segmentation models and downstream 3D reconstruction work on mismatched anatomy.</span><span lang="fr">Le CT rénal est acquis en plusieurs phases de contraste. Comparer ou combiner ces phases impose d'abord un alignement spatial, sinon les modèles de segmentation et la reconstruction 3D travaillent sur une anatomie qui ne correspond pas.</span></p>
+<ul class="plain">
+  <li><span lang="en">Translation and rotation transformation for rigid alignment between CT phases</span><span lang="fr">Transformation par translation et rotation pour le recalage rigide entre phases CT</span></li>
+  <li><span lang="en">B-spline algorithm for non-rigid registration between acquisitions</span><span lang="fr">Algorithme B-spline pour le recalage non rigide entre acquisitions</span></li>
+  <li><span lang="en">DICOM preprocessing and 3D Slicer visualization for registration review</span><span lang="fr">Prétraitement DICOM et visualisation dans 3D Slicer pour contrôler le recalage</span></li>
+</ul>
+<p class="stack"><span lang="en">Tools:</span><span lang="fr">Outils :</span> Python · 3D Slicer · DICOM · B-spline Algorithm · Translation and rotation transformation</p>
+<figure class="kidney-registration-compare">
+  <div class="registration-pair">
+    <div class="registration-panel">
+      <p><span lang="en">Before registration</span><span lang="fr">Avant recalage</span></p>
+      <video src="images/Registration_before.mp4"
+             autoplay loop muted playsinline preload="metadata"
+             aria-label="Before registration between two CT phases."></video>
+    </div>
+    <div class="registration-panel">
+      <p><span lang="en">After registration</span><span lang="fr">Après recalage</span></p>
+      <video src="images/Registration_after.mp4"
+             autoplay loop muted playsinline preload="metadata"
+             aria-label="After registration between two CT phases."></video>
+    </div>
+  </div>
+  <figcaption><span lang="en">Before and after non-rigid registration between two CT phases.</span><span lang="fr">Comparaison avant et après recalage non rigide entre deux phases CT.</span></figcaption>
+</figure>
+</section>
+<section class="phase">
+  <p class="phase__n">03</p>
+  <h2><span lang="en">Training and validation</span><span lang="fr">Entraînement et validation</span></h2>
+  
+<p><span lang="en">The training logic was split by target. I trained dedicated supervised models for kidney and renal lesion segmentation, then used an open-source pretrained model for renal substructures such as cortex, medulla and the pelvicalyceal system.</span><span lang="fr">La logique d'entraînement était séparée selon la cible. J'ai entraîné des modèles supervisés dédiés pour la segmentation du rein et des lésions rénales, puis utilisé un modèle pré-entraîné open source pour les sous-structures rénales comme le cortex, la médulla et le système pyélocaliciel.</span></p>
+<p><span lang="en">MedSAM2 was used as an interactive support method when tumor delineation needed correction or when automatic predictions were not accurate enough.</span><span lang="fr">MedSAM2 a été utilisé comme méthode interactive de support lorsque la délimitation des tumeurs devait être corrigée ou lorsque les prédictions automatiques n'étaient pas assez précises.</span></p>
+<table class="metrics" style="margin-top:1.4rem">
+  <thead><tr><th><span lang="en">Structure</span><span lang="fr">Structure</span></th><th><span lang="en">Cases</span><span lang="fr">Volumes</span></th><th>Dice</th></tr></thead>
+  <tbody>
+    <tr><td><span lang="en">Renal parenchyma</span><span lang="fr">Parenchyme rénal</span></td><td class="mono">1,403 CT</td><td class="dice">0.96<span class="bar"><i style="width:96%"></i></span></td></tr>
+    <tr><td><span lang="en">Cortex</span><span lang="fr">Cortex</span></td><td class="mono">116 CT</td><td class="dice">0.92<span class="bar"><i style="width:92%"></i></span></td></tr>
+    <tr><td><span lang="en">Renal lesions</span><span lang="fr">Lésions rénales</span></td><td class="mono">210 CT</td><td class="dice">0.84<span class="bar"><i style="width:84%"></i></span></td></tr>
+    <tr><td><span lang="en">Medulla</span><span lang="fr">Médulla</span></td><td class="mono">116 CT</td><td class="dice">0.84<span class="bar"><i style="width:84%"></i></span></td></tr>
+    <tr><td><span lang="en">Pelvicalyceal system</span><span lang="fr">Système pyélocaliciel</span></td><td class="mono">116 CT</td><td class="dice">0.78<span class="bar"><i style="width:78%"></i></span></td></tr>
+  </tbody>
+</table>
+<figure class="kidney-model-video">
+  <video src="images/Kidney_3DModel.mp4"
+         autoplay loop muted playsinline preload="metadata"
+         aria-label="Patient-specific 3D kidney model with renal components."></video>
+  <figcaption><span lang="en">Patient-specific 3D kidney model containing the kidneys, tumors and renal substructures.</span><span lang="fr">Modèle 3D patient-spécifique contenant les reins, les tumeurs et les sous-structures rénales.</span></figcaption>
+</figure>
+<p class="stack"><span lang="en">Tools:</span><span lang="fr">Outils :</span> Python · PyTorch · nnU-Net · MedSAM2 · UNesT</p>
+</section>
+    <p class="note"><span lang="en">Internal project results obtained in a proprietary medtech context. Not published or peer-reviewed. Screenshots and videos contain no patient-identifying information.</span><span lang="fr">Résultats internes obtenus en contexte medtech propriétaire. Non publiés ni revus par les pairs. Les captures et vidéos ne contiennent aucune information permettant d'identifier un patient.</span></p>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="wrap">
+    <p class="eyebrow">Contact</p>
+    <h2><span lang="en">Tell me about your data and your goal.</span><span lang="fr">Parlez-moi de vos données et de votre objectif.</span></h2>
+    <p class="lede" style="margin-top:1.2rem"><span lang="en">Open to roles in medical imaging, computer vision and AI. I focus on building solutions that are both technically sound and clinically relevant.</span><span lang="fr">Ouvert aux postes en imagerie médicale, vision par ordinateur et IA. Je me concentre sur la construction de solutions à la fois techniquement solides et cliniquement pertinentes.</span></p>
+    <div class="contact">
+      <a href="mailto:youssef.ezidi96@gmail.com"><b>Email</b>youssef.ezidi96@gmail.com</a>
+      <a href="https://www.linkedin.com/in/youssef-ezidi-624b08156/" rel="noopener"><b>LinkedIn</b><span lang="en">Profile</span><span lang="fr">Profil</span></a>
+      <a href="files/cv-youssef-ezidi-en.pdf"><b>CV (EN)</b>PDF</a>
+      <a href="files/cv-youssef-ezidi-fr.pdf"><b>CV (FR)</b>PDF</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <span>Youssef Ezidi — France</span>
+  </div>
+</footer>
+<script src="assets/js/site.js"></script>
+</body>
+</html>
+
+

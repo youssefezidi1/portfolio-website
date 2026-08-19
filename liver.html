@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en" style="--plane: var(--axial); --accent: var(--axial)">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-en="Liver digital twin — Youssef Ezidi" data-fr="Jumeau numérique hépatique — Youssef Ezidi">Liver digital twin — Youssef Ezidi</title>
+<meta name="description" content="Automated 3D liver segmentation from CT, deployed in a custom 3D Slicer application.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="case-liver">
+<a class="skip" href="#main"><span lang="en">Skip to content</span><span lang="fr">Aller au contenu</span></a>
+<header class="topbar">
+  <div class="wrap topbar__in">
+    <a class="brand" href="index.html">Youssef Ezidi <span>/ ML & deep learning</span></a>
+    <nav class="nav">
+      <a href="index.html"><span lang="en">Work</span><span lang="fr">Projets</span></a>
+      <a href="index.html#projects"><span lang="en">Projects</span><span lang="fr">Projets</span></a>
+      <a href="about.html"><span lang="en">About</span><span lang="fr">Parcours</span></a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="langswitch" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<section class="wrap hero">
+  <a class="back" href="index.html"><span lang="en">&larr; All projects</span><span lang="fr">&larr; Tous les projets</span></a>
+  <p class="eyebrow"><span lang="en">Liver digital twin</span><span lang="fr">Jumeau numérique hépatique</span></p>
+  <h1><span lang="en">Turning abdominal CT volumes into patient-specific 3D liver models.</span><span lang="fr">Transformer des volumes CT abdominaux en modèles hépatiques 3D patient-spécifiques.</span></h1>
+  <p class="lede" style="margin-top:1.5rem"><span lang="en">An end-to-end project at a medtech startup: I worked on the full pipeline, from data preparation and model training to clinical validation and deployment in a standalone application.</span><span lang="fr">Un projet de bout en bout en startup medtech : j'ai travaillé sur toute la chaîne, de la préparation des données et de l'entraînement des modèles jusqu'à la validation clinique et au déploiement dans une application autonome.</span></p>
+  <dl class="facts">
+<div><dt><span lang="en">Context</span><span lang="fr">Contexte</span></dt><dd><span lang="en">Medtech startup, France</span><span lang="fr">Startup medtech, France</span></dd></div>
+<div><dt><span lang="en">Period</span><span lang="fr">Période</span></dt><dd><span lang="en">Feb 2025 – May 2026</span><span lang="fr">Fév. 2025 – Mai 2026</span></dd></div>
+<div><dt><span lang="en">Targets</span><span lang="fr">Cibles</span></dt><dd><span lang="en">Parenchyma, vessels, lesions, liver segments</span><span lang="fr">Parenchyme, vaisseaux, lésions, segments hépatiques</span></dd></div>
+<div><dt><span lang="en">Modality</span><span lang="fr">Modalité</span></dt><dd><span lang="en">CT — DICOM and NIfTI</span><span lang="fr">CT — DICOM et NIfTI</span></dd></div>
+  </dl>
+</section>
+
+<section class="section" style="border-top:0;padding-top:0">
+  <div class="wrap">
+
+<section class="phase">
+  <p class="phase__n">01</p>
+  <h2><span lang="en">Data preparation</span><span lang="fr">Préparation des données</span></h2>
+  
+<p><span lang="en">Each anatomical structure required a different approach.</span><span lang="fr">Chaque structure anatomique demandait une approche différente.</span></p>
+<p><span lang="en">The liver is relatively large and easy to identify on CT, while lesions can be small and highly variable. Vessels are thin and difficult to segment because of their branching structure and low contrast. Liver segments are also more challenging because they depend on the internal anatomy of the liver.</span><span lang="fr">Le foie est relativement volumineux et facile à identifier sur CT, tandis que les lésions peuvent être petites et très variables. Les vaisseaux sont fins et difficiles à segmenter à cause de leur structure ramifiée et de leur faible contraste. Les segments hépatiques sont également plus difficiles, car ils dépendent de l'anatomie interne du foie.</span></p>
+<p><span lang="en">For each target, I prepared the data and adapted the preprocessing and training strategy.</span><span lang="fr">Pour chaque cible, j'ai préparé les données et adapté la stratégie de prétraitement et d'entraînement.</span></p>
+<ul class="plain">
+  <li><span lang="en">DICOM and NIfTI loading and conversion</span><span lang="fr">Chargement et conversion des données DICOM et NIfTI</span></li>
+  <li><span lang="en">Image resampling, orientation standardization and spacing</span><span lang="fr">Rééchantillonnage des images, standardisation de l'orientation et du spacing</span></li>
+  <li><span lang="en">Intensity normalization</span><span lang="fr">Normalisation de l'intensité</span></li>
+  <li><span lang="en">Patient-level train, validation and test splits</span><span lang="fr">Découpage train, validation et test au niveau patient</span></li>
+</ul>
+<p class="stack"><span lang="en">Tools:</span><span lang="fr">Outils :</span> Python · PyTorch · DICOM · NIfTI</p>
+<figure>
+  <img src="images/liver-01-slice-overlay.png" alt="Liver parenchyma, vessel and lesion masks overlaid on an axial CT slice." data-label="images/liver-01-slice-overlay.png">
+  <figcaption><span lang="en">Liver, vessel and lesion masks overlaid on an axial CT slice.</span><span lang="fr">Masques du foie, des vaisseaux et des lésions superposés à une coupe CT axiale.</span></figcaption>
+</figure>
+</section>
+<section class="phase">
+  <p class="phase__n">02</p>
+  <h2><span lang="en">Model training</span><span lang="fr">Entraînement des modèles</span></h2>
+  
+<p><span lang="en">I trained and compared several 3D segmentation models for the different anatomical structures.</span><span lang="fr">J'ai entraîné et comparé plusieurs modèles de segmentation 3D pour les différentes structures anatomiques.</span></p>
+<p><span lang="en">For supervised segmentation, I worked with:</span><span lang="fr">Pour la segmentation supervisée, j'ai travaillé avec :</span></p>
+<ul class="plain">
+  <li>3D U-Net</li>
+  <li>nnU-Net</li>
+  <li>SwinUNETR</li>
+</ul>
+<p><span lang="en">For small or difficult lesions, I used interactive segmentation methods when the automatic models were not accurate enough:</span><span lang="fr">Pour les lésions petites ou difficiles, j'ai utilisé des méthodes de segmentation interactive lorsque les modèles automatiques n'étaient pas assez précis :</span></p>
+<ul class="plain">
+  <li>MedSAM</li>
+  <li>MedSAM2</li>
+</ul>
+<p><span lang="en">The choice of model depended on the structure and on the amount of available training data.</span><span lang="fr">Le choix du modèle dépendait de la structure à segmenter et de la quantité de données d'entraînement disponibles.</span></p>
+<p class="stack"><span lang="en">Tools:</span><span lang="fr">Outils :</span> Python · PyTorch · 3D U-Net · nnU-Net · SwinUNETR · MedSAM · MedSAM2</p>
+</section>
+<section class="phase">
+  <p class="phase__n">03</p>
+  <h2><span lang="en">Validation</span><span lang="fr">Validation</span></h2>
+  
+<table class="metrics" style="margin-top:1rem">
+  <thead><tr><th><span lang="en">Structure</span><span lang="fr">Structure</span></th><th><span lang="en">Cases</span><span lang="fr">Volumes</span></th><th>Dice</th></tr></thead>
+  <tbody>
+    <tr><td><span lang="en">Liver parenchyma</span><span lang="fr">Parenchyme hépatique</span></td><td class="mono">1,403 CT</td><td class="dice">0.96<span class="bar"><i style="width:96%"></i></span></td></tr>
+    <tr><td><span lang="en">Lesions</span><span lang="fr">Lésions</span></td><td class="mono">303 CT</td><td class="dice">0.88<span class="bar"><i style="width:88%"></i></span></td></tr>
+    <tr><td><span lang="en">Liver segments</span><span lang="fr">Segments hépatiques</span></td><td class="mono">197 CT</td><td class="dice">0.89<span class="bar"><i style="width:89%"></i></span></td></tr>
+    <tr><td><span lang="en">Hepatic vessels</span><span lang="fr">Vaisseaux hépatiques</span></td><td class="mono">303 CT</td><td class="dice">0.74<span class="bar"><i style="width:74%"></i></span></td></tr>
+  </tbody>
+</table>
+<p style="margin-top:1.6rem"><span lang="en">Vessel segmentation was the most difficult task because vessels are thin, branching and sometimes have low contrast on CT.</span><span lang="fr">La segmentation des vaisseaux était la tâche la plus difficile, car les vaisseaux sont fins, ramifiés et parfois peu contrastés sur CT.</span></p>
+<p><span lang="en">The models were not evaluated only with Dice scores. Their outputs were also reviewed with clinicians to check whether the segmentations were anatomically correct and useful in practice.</span><span lang="fr">Les modèles n'ont pas été évalués uniquement avec des scores Dice. Leurs sorties ont aussi été relues avec des cliniciens afin de vérifier si les segmentations étaient anatomiquement correctes et utiles en pratique.</span></p>
+<p><span lang="en">Their feedback helped identify errors, improve the models and define the criteria for acceptable results.</span><span lang="fr">Leurs retours ont permis d'identifier les erreurs, d'améliorer les modèles et de définir les critères de résultats acceptables.</span></p>
+<figure class="compact-figure model-figure">
+  <video src="images/liver-02-3d-model.mp4" poster="images/liver-02-3d-model.jpg"
+         width="766" height="660"
+         autoplay loop muted playsinline preload="metadata"
+         aria-label="Rotating patient-specific 3D liver model with vascular tree and lesions."></video>
+  <img class="poster-fallback" src="images/liver-02-3d-model.jpg" alt="Patient-specific 3D liver model with vascular tree and lesions." style="display:none">
+  <figcaption><span lang="en">Example of a patient-specific 3D liver model generated from the predicted segmentations of the liver, vessels and lesions.</span><span lang="fr">Exemple de modèle hépatique 3D patient-spécifique généré à partir des segmentations prédites du foie, des vaisseaux et des lésions.</span></figcaption>
+</figure>
+<figure class="compact-figure model-figure">
+  <video src="images/liver_segments.mp4"
+         autoplay loop muted playsinline preload="metadata"
+         aria-label="Rotating 3D liver model showing anatomical liver segments."></video>
+  <figcaption><span lang="en">Example of a 3D liver segment model generated from the predicted liver segmentations.</span><span lang="fr">Exemple de modèle 3D des segments hépatiques généré à partir des segmentations hépatiques prédites.</span></figcaption>
+</figure>
+</section>
+<section class="phase">
+  <p class="phase__n">04</p>
+  <h2><span lang="en">Application development and deployment</span><span lang="fr">Développement applicatif et déploiement</span></h2>
+  
+<p><span lang="en">I developed a customized version of 3D Slicer for the project and integrated the trained segmentation models directly into the application.</span><span lang="fr">J'ai développé une version personnalisée de 3D Slicer pour le projet et intégré les modèles de segmentation entraînés directement dans l'application.</span></p>
+<p><span lang="en">The interface was adapted to the clinical workflow so the user could load a CT scan, run the segmentation models, review the results, visualize the liver in 3D and export the final model without using scripts or a terminal.</span><span lang="fr">L'interface a été adaptée au workflow clinique afin que l'utilisateur puisse charger un scanner CT, lancer les modèles de segmentation, relire les résultats, visualiser le foie en 3D et exporter le modèle final sans utiliser de scripts ni de terminal.</span></p>
+<p><span lang="en">The application allows the user to:</span><span lang="fr">L'application permet à l'utilisateur de :</span></p>
+<ul class="plain">
+  <li><span lang="en">Load CT data</span><span lang="fr">Charger les données CT</span></li>
+  <li><span lang="en">Run the trained segmentation models</span><span lang="fr">Lancer les modèles de segmentation entraînés</span></li>
+  <li><span lang="en">Review and correct the segmentations</span><span lang="fr">Relire et corriger les segmentations</span></li>
+  <li><span lang="en">Visualize the liver, vessels, lesions and liver segments in 3D</span><span lang="fr">Visualiser le foie, les vaisseaux, les lésions et les segments hépatiques en 3D</span></li>
+  <li><span lang="en">Export the final 3D model</span><span lang="fr">Exporter le modèle 3D final</span></li>
+</ul>
+<p class="stack"><span lang="en">Tools:</span><span lang="fr">Outils :</span> Python · C++ · Qt · CMake · 3D Slicer</p>
+<figure class="compact-figure app-figure">
+  <img src="images/liver-03-slicer-app.png" alt="Custom 3D Slicer application running the full segmentation workflow." data-label="images/liver-03-slicer-app.png">
+  <figcaption><span lang="en">Custom 3D Slicer application running the complete segmentation workflow.</span><span lang="fr">Application 3D Slicer personnalisée exécutant le workflow complet de segmentation.</span></figcaption>
+</figure>
+</section>
+    <p class="note"><span lang="en">These results were obtained during an internal project in a proprietary medtech environment. They have not been published or peer-reviewed. The screenshots contain no patient-identifying information.</span><span lang="fr">Ces résultats ont été obtenus lors d'un projet interne dans un environnement medtech propriétaire. Ils n'ont pas été publiés ni revus par les pairs. Les captures ne contiennent aucune information permettant d'identifier un patient.</span></p>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="wrap">
+    <p class="eyebrow">Contact</p>
+    <h2><span lang="en">Tell me about your data and your goal.</span><span lang="fr">Parlez-moi de vos données et de votre objectif.</span></h2>
+    <p class="lede" style="margin-top:1.2rem"><span lang="en">Open to roles in medical imaging, computer vision and AI.</span><span lang="fr">Ouvert aux postes en imagerie médicale, vision par ordinateur et IA.</span></p>
+    <p class="lede" style="margin-top:1rem"><span lang="en">I work on medical imaging projects from data preparation and model training to validation and deployment, with a focus on solutions that can actually be used in clinical workflows.</span><span lang="fr">Je travaille sur des projets d'imagerie médicale, de la préparation des données et de l'entraînement des modèles jusqu'à la validation et au déploiement, avec un focus sur des solutions réellement utilisables dans les workflows cliniques.</span></p>
+    <div class="contact">
+      <a href="mailto:youssef.ezidi96@gmail.com"><b>Email</b>youssef.ezidi96@gmail.com</a>
+      <a href="https://www.linkedin.com/in/youssef-ezidi-624b08156/" rel="noopener"><b>LinkedIn</b><span lang="en">Profile</span><span lang="fr">Profil</span></a>
+      <a href="files/cv-youssef-ezidi-en.pdf"><b>CV (EN)</b>PDF</a>
+      <a href="files/cv-youssef-ezidi-fr.pdf"><b>CV (FR)</b>PDF</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <span>Youssef Ezidi — France</span>
+  </div>
+</footer>
+<script src="assets/js/site.js"></script>
+</body>
+</html>
